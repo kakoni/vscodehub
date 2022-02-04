@@ -1,7 +1,8 @@
 # vscodehub
 Run VS Code using JupyterHub and dockerspawner.
 
-
+## Description
+Run [VS Code](https://github.com/coder/code-server) browser version for multiple users.
 
 ## Get started
 1. Create docker network 
