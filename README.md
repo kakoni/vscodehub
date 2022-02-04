@@ -1,5 +1,6 @@
 # vscodehub
-Run VS Code using JupyterHub and dockerspawner
+Run VS Code using JupyterHub and dockerspawner.
+
 
 
 ## Get started
