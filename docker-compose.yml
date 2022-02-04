@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  chp:
+    image: jupyterhub/configurable-http-proxy:4.5
+    command: --no-include-prefix
+    environment:
+      - CONFIGPROXY_AUTH_TOKEN=08168e511a2547629ae10f4e631c647363833acdb408b8f5be277838e3e1a57f
+    networks:
+      - jupyterhub_network
+    ports:
+      - 8000:8000
+  hub:
+    build:
+      context: .
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py"
+    environment:
+      - CONFIGPROXY_AUTH_TOKEN=08168e511a2547629ae10f4e631c647363833acdb408b8f5be277838e3e1a57f
+    networks:
+      - jupyterhub_network
+
+
+networks:
+  jupyterhub_network:
+    external: true
